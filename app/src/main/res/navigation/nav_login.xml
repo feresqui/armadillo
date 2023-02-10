@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_login"
+    app:startDestination="@id/listUsersFragment">
+
+    <fragment
+        android:id="@+id/listUsersFragment"
+        android:name="py.com.sistemasepsilon.ui.login.ListUsersFragment"
+        android:label="fragment_list_users"
+        tools:layout="@layout/fragment_list_users" >
+        <action
+            android:id="@+id/action_listUsersFragment_to_introUserPasswordFragment"
+            app:destination="@id/introUserPasswordFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/introUserPasswordFragment"
+        android:name="py.com.sistemasepsilon.ui.login.IntroUserPasswordFragment"
+        android:label="fragment_intro_user_password"
+        tools:layout="@layout/fragment_intro_user_password" />
+</navigation>
