@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import py.com.sistemasepsilon.databinding.FragmentListUsersBinding
+import py.com.sistemasepsilon.model.User
 
 class ListUsersFragment : Fragment() {
 
@@ -30,7 +31,10 @@ class ListUsersFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProvider(this)[ListUsersViewModel::class.java]
-        // TODO: Use the ViewModel
+
+        viewModel.users.observe(viewLifecycleOwner) {
+            println(it)
+        }
     }
 
 }
