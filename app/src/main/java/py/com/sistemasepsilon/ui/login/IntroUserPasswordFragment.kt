@@ -7,6 +7,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import py.com.sistemasepsilon.R
+import py.com.sistemasepsilon.databinding.FragmentIntroUserPasswordBinding
+import py.com.sistemasepsilon.databinding.FragmentListUsersBinding
 
 class IntroUserPasswordFragment : Fragment() {
 
@@ -14,18 +16,21 @@ class IntroUserPasswordFragment : Fragment() {
         fun newInstance() = IntroUserPasswordFragment()
     }
 
+    private lateinit var binding: FragmentIntroUserPasswordBinding
     private lateinit var viewModel: IntroUserPasswordViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.fragment_intro_user_password, container, false)
+    ): View {
+        this.binding = FragmentIntroUserPasswordBinding.inflate(inflater, container, false)
+
+        return this.binding.root
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(IntroUserPasswordViewModel::class.java)
+        viewModel = ViewModelProvider(this)[IntroUserPasswordViewModel::class.java]
         // TODO: Use the ViewModel
     }
 

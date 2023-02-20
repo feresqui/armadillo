@@ -26,9 +26,10 @@ class ListUsersFragment : Fragment() {
         return this.binding.root
     }
 
+    @Deprecated("Deprecated in Java")
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        viewModel = ViewModelProvider(this).get(ListUsersViewModel::class.java)
+        viewModel = ViewModelProvider(this)[ListUsersViewModel::class.java]
         // TODO: Use the ViewModel
     }
 
