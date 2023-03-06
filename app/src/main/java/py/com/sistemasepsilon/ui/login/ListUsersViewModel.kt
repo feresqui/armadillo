@@ -10,15 +10,24 @@ class ListUsersViewModel : ViewModel() {
     val users: LiveData<ArrayList<User>>
         get() = _users
 
-
     init {
         loadUsers()
     }
 
     private fun loadUsers() {
         val tempUsers = arrayListOf(
-            User("Nombre1", "Apellido1", "pass1"),
-            User("Nombre2", "Apellido2", "pass2")
+            User("Liam Benjamin", "Rodriguez Patel", "pass1"),
+            User("Emily Sofia", "Nguyen Kim", "pass2"),
+            User("Liam Benjamin", "Rodriguez Patel", "pass1"),
+            User("Emily Sofia", "Nguyen Kim", "pass2"),
+            User("Liam Benjamin", "Rodriguez Patel", "pass1"),
+            User("Emily Sofia", "Nguyen Kim", "pass2"),
+            User("Liam Benjamin", "Rodriguez Patel", "pass1"),
+            User("Emily Sofia", "Nguyen Kim", "pass2"),
+            User("Liam Benjamin", "Rodriguez Patel", "pass1"),
+            User("Emily Sofia", "Nguyen Kim", "pass2"),
+            User("Liam Benjamin", "Rodriguez Patel", "pass1"),
+            User("Emily Sofia", "Nguyen Kim", "pass2"),
         )
 
         this._users.value = tempUsers
