@@ -19,5 +19,9 @@
         android:id="@+id/introUserPasswordFragment"
         android:name="py.com.sistemasepsilon.ui.login.IntroUserPasswordFragment"
         android:label="fragment_intro_user_password"
-        tools:layout="@layout/fragment_intro_user_password" />
+        tools:layout="@layout/fragment_intro_user_password" >
+        <argument
+            android:name="user"
+            app:argType="py.com.sistemasepsilon.model.User" />
+    </fragment>
 </navigation>

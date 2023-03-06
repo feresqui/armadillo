@@ -32,4 +32,8 @@ class ListUsersViewModel : ViewModel() {
 
         this._users.value = tempUsers
     }
+
+    fun getUser(position: Int): User {
+        return this._users.value?.get(position) ?: User(name = "", surname = "", password = "")
+    }
 }

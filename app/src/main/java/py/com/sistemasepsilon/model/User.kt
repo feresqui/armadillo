@@ -6,4 +6,8 @@ data class User(
     val name: String?,
     val surname: String?,
     val password: String?
-): Serializable
+): Serializable {
+    fun isEmpty(): Boolean {
+        return this.name?.isEmpty() ?: true && this.surname?.isEmpty() ?: true && this.password?.isEmpty() ?: true
+    }
+}

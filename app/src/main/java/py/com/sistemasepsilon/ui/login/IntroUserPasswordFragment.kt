@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import py.com.sistemasepsilon.R
 import py.com.sistemasepsilon.databinding.FragmentIntroUserPasswordBinding
 import py.com.sistemasepsilon.databinding.FragmentListUsersBinding
+import py.com.sistemasepsilon.model.User
 
 class IntroUserPasswordFragment : Fragment() {
 
@@ -18,12 +19,18 @@ class IntroUserPasswordFragment : Fragment() {
 
     private lateinit var binding: FragmentIntroUserPasswordBinding
     private lateinit var viewModel: IntroUserPasswordViewModel
+    private lateinit var user: User
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         this.binding = FragmentIntroUserPasswordBinding.inflate(inflater, container, false)
+
+        this.arguments?.let {
+            val args = IntroUserPasswordFragmentArgs.fromBundle(it)
+            this.user = args.user
+        }
 
         return this.binding.root
     }

@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.NavHostFragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import py.com.sistemasepsilon.databinding.FragmentListUsersBinding
 import py.com.sistemasepsilon.model.User
@@ -43,7 +44,12 @@ class ListUsersFragment : Fragment() {
     }
 
     private val onItemClicked = fun (position: Int) {
-        print(position)
+        val user = this.viewModel.getUser(position)
+        if (user.isEmpty()) {
+            // Alert
+        } else {
+            NavHostFragment.findNavController(this).navigate(ListUsersFragmentDirections.actionListUsersFragmentToIntroUserPasswordFragment(user))
+        }
     }
 
 }
